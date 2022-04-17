@@ -6,82 +6,9 @@ using System.Threading.Tasks;
 
 namespace QLSV
 {
-    class SinhVien
-    {
-        public string Ten { get; set; }
-        public int MaSV { get; set; }
-        public string GioiTinh { get; set; }
-        public string DOB { get; set; }
-        public string Lop { get; set; }
-        public string Khoa { get; set; }
+    
 
-        public ICollection<MonHoc> MonHocs { get; set; }
-        public SinhVien(SinhVien s)
-        {
-            this.Ten = s.Ten;
-            this.MaSV = s.MaSV;
-            this.GioiTinh = s.GioiTinh;
-            this.DOB = s.DOB;
-            this.Lop = s.Lop;
-            this.Khoa = s.Khoa;
-        }
-
-        public SinhVien(string Ten, int MaSV, string GioiTinh, string DOB, string Lop, string Khoa)
-        {
-            this.Ten = Ten;
-            this.MaSV = MaSV;
-            this.GioiTinh= GioiTinh;
-            this.DOB= DOB;
-            this.Lop = Lop;
-            this.Khoa = Khoa;
-        }
-        public void info()
-        {
-            Console.WriteLine(string.Format("|{0,-12}|{1,-18}|{2,-12}|{3,-18}|{4,-12}|{5,-12}|{6,-15}|", MaSV , Ten , GioiTinh , DOB , Lop , Khoa, MonHocs.Count()));
-        }
-    }
-
-    class MonHoc
-    {
-        public string TenMH { get; set; }
-        public int SoTiet { get; set; }
-        public double DiemTP { get; set; }
-        public double DiemQT { get; set; }
-        public double DiemTK { get; set; }
-
-
-        public MonHoc(MonHoc m)
-        {
-            TenMH = m.TenMH;
-            SoTiet = m.SoTiet;
-        }
-        public MonHoc(string TenMH, int SoTiet)
-        {
-            this.TenMH = TenMH;
-            this.SoTiet = SoTiet;
-        }
-        public void NhapDiem(double DiemTP, double DiemQT)
-        {
-            this.DiemQT = DiemQT;
-            this.DiemTP = DiemTP;
-            this.DiemTK = (DiemTP + DiemQT) / 2;
-        }
-        public string DanhGia()
-        {
-            if (DiemTK < 4)
-                return "Chua dat";
-            else
-                return "Dat";
-
-            return "Chua du thong tin";
-        }
-        public void thongtin()
-        {
-            Console.WriteLine(string.Format("|{0,-20}|{1,-10}|{2,-10}|{3,-10}|{4,-10}|{5,-10}|", TenMH,SoTiet, DiemTP,DiemQT,DiemTK, DanhGia()));
-        }
-
-
-    }
+    
 
 
 
@@ -94,7 +21,7 @@ namespace QLSV
             
             //Tạo danh sách sinh viên, danh sách môn học
             List<SinhVien> SVs = new List<SinhVien>();
-            SinhVien sv1 = new SinhVien("La Bo", 1, "Nam", "2009 - 05 - 08", "12a1", "1920");
+            SinhVien sv1 = new SinhVien("Sova", 1, "Nam", "2009 - 05 - 08", "12a1", "1920");
             SVs.Add(sv1);
             SinhVien sv2 = new SinhVien("Omen", 2, "Nam", "2009 - 05 - 08", "12a2", "1920");
             SVs.Add(sv2);
@@ -137,6 +64,7 @@ namespace QLSV
             sv5.MonHocs = MHs5;
 
             //Menu chương trình
+            menu:
             Console.WriteLine("___MENU___");
             Console.WriteLine("1. Danh sach sinh vien");
             Console.WriteLine("2. Thong tin sinh vien");
@@ -146,15 +74,28 @@ namespace QLSV
             switch (choose)
 
             {
+
                 case 1:
                     Console.WriteLine("Danh sach sinh vien");
-                    Console.WriteLine(string.Format("|{0,-12}|{1,-18}|{2,-12}|{3,-18}|{4,-12}|{5,-12}|{6,-15}|", "Ma sinh vien", "Ten sinh vien", "Gioi tinh" , "Ngay sinh" , "Lop" , "Khoa" , "So mon dang ky"));
+                    Console.WriteLine(string.Format("|{0,-12}|{1,-18}|{2,-12}|{3,-18}|{4,-12}|{5,-12}|{6,-15}|", "Ma sinh vien", "Ten sinh vien", "Gioi tinh", "Ngay sinh", "Lop", "Khoa", "So mon dang ky"));
                     foreach (SinhVien m in SVs)
                     {
                         m.info();
                     }
+                    Console.WriteLine("Ban co muon thoat? (y/n)");
+                    string key1 = Console.ReadLine();
+                    if (key1 == "y")
+                    { 
+                        Console.WriteLine("Tam biet!");
+                        System.Threading.Thread.Sleep(1000);
+                        Environment.Exit(0);
+                    }
+                    else
+                        goto menu;
                     break;
+                
                 case 2:
+                    case_2:
                     Console.WriteLine("Thong tin sinh vien");
                     Console.WriteLine("Moi nhap ma sinh vien");
                     int case2 = Int32.Parse(Console.ReadLine());
@@ -166,8 +107,19 @@ namespace QLSV
 
                     }
                     thongtinchitiet(case2, SVs);
+
+                    Console.WriteLine("Ban co muon tiep tuc? (y/n)");
+                    string key2 = Console.ReadLine();
+                    if (key2 == "y")
+                    {
+                        goto case_2;
+                    }
+                    else
+                        goto menu;
                     break;
+                
                 case 3:
+                    case_3:
                     Console.WriteLine("Moi nhap ma sinh vien");
                     int case4 = Int32.Parse(Console.ReadLine());
 
@@ -178,7 +130,17 @@ namespace QLSV
                         case4 = Int32.Parse(Console.ReadLine());
                         
                     }
+
                     nhapdiem(SVs.Find(s => s.MaSV == case4));
+
+                    Console.WriteLine("Ban co muon tro ve menu ? (y/n)");
+                    string key3 = Console.ReadLine();
+                    if (key3 == "y")
+                    {
+                        goto case_3;
+                    }
+                    else
+                        goto menu;
                     break;
                 default:
                     Console.WriteLine("Xin moi nhap lua chon tu 1 den 3!");
@@ -224,8 +186,9 @@ namespace QLSV
         }
 
         //Nhập điểm cho sinh viên
-        public static void nhapdiem(SinhVien sv)
+        public static Boolean nhapdiem(SinhVien sv)
         {
+            diem:
             Console.WriteLine(string.Format("{0,2}|{1,-20}|{2,-10}|{3,-10}|{4,-10}|{5,-10}|{6,-10}|", "STT","Ten mon hoc", "So Tiet", "Diem TP", "Diem QT", "Diem TK", "Danh gia"));
             int index=monhocsv(sv);
             Console.WriteLine("Moi chon stt mon ban muon nhap diem");
@@ -241,7 +204,17 @@ namespace QLSV
                 sv.MonHocs.ElementAt(choose-1).NhapDiem(DiemTP, DiemQT);
                 Console.WriteLine("Nhap diem thanh cong!");
                 index = monhocsv(sv);
+
+                Console.WriteLine("Ban co muon tiep tuc? (y/n)");
+                string key1 = Console.ReadLine();
+                if (key1 == "y")
+                {
+                    goto diem;
+                }
+                else return true;
+                
             }
+            return true;
         }
         public static int monhocsv(SinhVien sv)
         {
@@ -254,5 +227,6 @@ namespace QLSV
             }
             return index;
         }
+
     }
 }
