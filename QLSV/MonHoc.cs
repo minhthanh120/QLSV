@@ -8,41 +8,22 @@ namespace QLSV
 {
     public class MonHoc
     {
+        public int MaMon { get; set; }
         public string TenMH { get; set; }
         public int SoTiet { get; set; }
-        public double DiemTP { get; set; }
-        public double DiemQT { get; set; }
-        public double DiemTK { get; set; }
-
-
-        public MonHoc(MonHoc m)
+        public MonHoc()
         {
-            TenMH = m.TenMH;
-            SoTiet = m.SoTiet;
         }
-        public MonHoc(string TenMH, int SoTiet)
+        public MonHoc(int MaMon, string TenMH, int SoTiet)
         {
+            this.MaMon = MaMon;
             this.TenMH = TenMH;
             this.SoTiet = SoTiet;
         }
-        public void NhapDiem(double DiemTP, double DiemQT)
-        {
-            this.DiemQT = DiemQT;
-            this.DiemTP = DiemTP;
-            this.DiemTK = (DiemTP + DiemQT) / 2;
-        }
-        public string DanhGia()
-        {
-            if (DiemTK < 4)
-                return "Chua dat";
-            else
-                return "Dat";
-        }
-        public void thongtin()
-        {
-            Console.WriteLine(string.Format("|{0,-20}|{1,-10}|{2,-10}|{3,-10}|{4,-10}|{5,-10}|", TenMH, SoTiet, DiemTP, DiemQT, DiemTK, DanhGia()));
-        }
 
-
+        public void info()
+        {
+            Console.WriteLine(string.Format("|{0,-3}|{1,-25}|{2,-3}|", MaMon, TenMH, SoTiet));
+        }
     }
 }
