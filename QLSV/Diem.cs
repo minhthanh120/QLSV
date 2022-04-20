@@ -8,6 +8,7 @@ namespace QLSV
 {
     public class Diem
     {
+        //Model Điểm
         public int MaSV { get; set; }
         public int MaMon { get; set; }
         public double DiemQT { get; set; }

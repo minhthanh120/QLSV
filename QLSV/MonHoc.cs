@@ -8,6 +8,7 @@ namespace QLSV
 {
     public class MonHoc
     {
+        //Model Môn học
         public int MaMon { get; set; }
         public string TenMH { get; set; }
         public int SoTiet { get; set; }

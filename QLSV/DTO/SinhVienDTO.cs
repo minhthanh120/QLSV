@@ -8,6 +8,7 @@ namespace QLSV.DTO
 {
     public class SinhVienDTO
     {
+        //ViewModel Sinh viên
         public string Ten { get; set; }
         public int MaSV { get; set; }
         public string GioiTinh { get; set; }

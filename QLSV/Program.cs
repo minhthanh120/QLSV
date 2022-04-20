@@ -31,7 +31,7 @@ namespace QLSV
             switch (choose)
 
             {
-
+                //Chức năng danh sách sinh viên
                 case 1:
                     try
                     {
@@ -59,7 +59,7 @@ namespace QLSV
                         Console.WriteLine(ex1.Message);
                     }
                     break;
-
+                //Chức năng hiển thị chi tiết danh sách sinh viên
                 case 2:
                 case_2:
                     try
@@ -92,7 +92,7 @@ namespace QLSV
                         Console.WriteLine(ex2.Message);
                     }
                     break;
-
+                //Nhập điểm
                 case 3:
                 case_3:
                     try
@@ -140,162 +140,213 @@ namespace QLSV
 
             Console.ReadKey();
         }
+        //Load danh sách sinh viên
         public static void SinhVienDTO_load(List<SinhVienDTO> SVs)
         {
-            dbConnector connector = new dbConnector();
-            DataTable dataTable1 = connector.connect_to_SinhVien();
-            SVs.Clear();
-            foreach (DataRow row in dataTable1.Rows)
+            try
             {
-                SinhVienDTO sv = new SinhVienDTO(Convert.ToString(row["TENSV"]), Convert.ToInt32(row["MASV"]), Convert.ToString(row["GIOITINH"]), Convert.ToString(row["NGAYSINH"]), Convert.ToString(row["LOP"]), Convert.ToString(row["KHOA"]), Convert.ToInt32(row["Số môn học"]));
-                SVs.Add(sv);
+                dbConnector connector = new dbConnector();
+                DataTable dataTable1 = connector.connect_to_SinhVien();
+                SVs.Clear();
+                foreach (DataRow row in dataTable1.Rows)
+                {
+                    SinhVienDTO sv = new SinhVienDTO(Convert.ToString(row["TENSV"]), Convert.ToInt32(row["MASV"]), Convert.ToString(row["GIOITINH"]), Convert.ToString(row["NGAYSINH"]), Convert.ToString(row["LOP"]), Convert.ToString(row["KHOA"]), Convert.ToInt32(row["Số môn học"]));
+                    SVs.Add(sv);
+                }
             }
+            catch (Exception e) { Console.WriteLine(e.Message); }
+            
 
         }
-
+        //Load danh sách sinh viên
         public static void SinhVien_load(List<SinhVien> SVs)
         {
-            dbConnector connector = new dbConnector();
-            DataTable dataTable1 = connector.connect_to_SinhVien();
-            SVs.Clear();
-            foreach (DataRow row in dataTable1.Rows)
+            try
             {
-                SinhVien sv = new SinhVien(Convert.ToString(row["TENSV"]), Convert.ToInt32(row["MASV"]), Convert.ToString(row["GIOITINH"]), Convert.ToString(row["NGAYSINH"]), Convert.ToString(row["LOP"]), Convert.ToString(row["KHOA"]));
-                SVs.Add(sv);
+                dbConnector connector = new dbConnector();
+                DataTable dataTable1 = connector.connect_to_SinhVien();
+                SVs.Clear();
+                foreach (DataRow row in dataTable1.Rows)
+                {
+                    SinhVien sv = new SinhVien(Convert.ToString(row["TENSV"]), Convert.ToInt32(row["MASV"]), Convert.ToString(row["GIOITINH"]), Convert.ToString(row["NGAYSINH"]), Convert.ToString(row["LOP"]), Convert.ToString(row["KHOA"]));
+                    SVs.Add(sv);
+                }
             }
+            catch ( Exception e){ Console.WriteLine(e.Message); }
+            
 
         }
+        //Load danh sách điểm
         public static void Diem_load(List<Diem> Diems)
         {
-            dbConnector connector = new dbConnector();
-            DataTable dataTable1 = connector.connect_to_Diem();
-            Diems.Clear();
-            foreach (DataRow row in dataTable1.Rows)
+            try
             {
-                Diem d = new Diem(Convert.ToInt32(row["MASV"]), Convert.ToInt32(row["MAMON"]), diem(row["DIEMQT"]), diem(row["DIEMTP"]), diem(row["DIEMTK"]), danhgia(row["DANHGIA"]));
-                Diems.Add(d);
+                dbConnector connector = new dbConnector();
+                DataTable dataTable1 = connector.connect_to_Diem();
+                Diems.Clear();
+                foreach (DataRow row in dataTable1.Rows)
+                {
+                    Diem d = new Diem(Convert.ToInt32(row["MASV"]), Convert.ToInt32(row["MAMON"]), diem(row["DIEMQT"]), diem(row["DIEMTP"]), diem(row["DIEMTK"]), danhgia(row["DANHGIA"]));
+                    Diems.Add(d);
+                }
             }
+            catch (Exception e) { Console.WriteLine(e.Message); }
+
         }
 
 
-
+        //Convert điểm từ object sang double
         public static double diem(object row)
         {
             double d = 0;
-            if (row != DBNull.Value)
-                d = Convert.ToDouble(row);
-            else
-                return d;
+            try
+            {
+                if (row != DBNull.Value)
+                    d = Convert.ToDouble(row);
+                else
+                    return d;
+            }
+            catch (Exception e) { Console.WriteLine(e.Message); }
+            
+
             return d;
         }
-
+        //Convert object đánh giá sang string
         public static string danhgia(object row)
         {
             string d = "Chưa đạt";
-            if (row != DBNull.Value)
-                d = Convert.ToString(row);
-            else
+            try
+            {
+                
+                if (row != DBNull.Value)
+                    d = Convert.ToString(row);
+                else
+                    return d;
                 return d;
+            }
+            catch (Exception e) { Console.WriteLine(e.Message); }
             return d;
         }
+        //Load danh sách môn học
         public static void MonHoc_load(List<MonHoc> MonHocs)
         {
-            dbConnector connector = new dbConnector();
-            DataTable dataTable1 = connector.connect_to_MonHoc();
-            MonHocs.Clear();
-            foreach (DataRow row in dataTable1.Rows)
+            try
             {
-                MonHoc d = new MonHoc(Convert.ToInt32(row["MAMON"]), Convert.ToString(row["TENMH"]), Convert.ToInt32(row["SOTIET"]));
-                MonHocs.Add(d);
+                dbConnector connector = new dbConnector();
+                DataTable dataTable1 = connector.connect_to_MonHoc();
+                MonHocs.Clear();
+                foreach (DataRow row in dataTable1.Rows)
+                {
+                    MonHoc d = new MonHoc(Convert.ToInt32(row["MAMON"]), Convert.ToString(row["TENMH"]), Convert.ToInt32(row["SOTIET"]));
+                    MonHocs.Add(d);
+                }
             }
+            catch (Exception e) { Console.WriteLine(e.Message); }
+            
         }
-
+        ////Load danh sách môn học
         public static void MonHocDTO_load(List<MonHocDTO> MonHocs, int masv)
         {
-            dbConnector connector = new dbConnector();
-            DataTable dataTable1 = connector.connect_to_MonhocDTO(masv);
-            MonHocs.Clear();
-            foreach (DataRow row in dataTable1.Rows)
+            try
             {
-                MonHocDTO d = new MonHocDTO(Convert.ToInt32(row["MAMON"]), Convert.ToString(row["TENMH"]), Convert.ToInt32(row["SOTIET"]), diem(row["DIEMQT"]), diem(row["DIEMTP"]), diem(row["DIEMTK"]), danhgia(row["DANHGIA"]));
-                MonHocs.Add(d);
+                dbConnector connector = new dbConnector();
+                DataTable dataTable1 = connector.connect_to_MonhocDTO(masv);
+                MonHocs.Clear();
+                foreach (DataRow row in dataTable1.Rows)
+                {
+                    MonHocDTO d = new MonHocDTO(Convert.ToInt32(row["MAMON"]), Convert.ToString(row["TENMH"]), Convert.ToInt32(row["SOTIET"]), diem(row["DIEMQT"]), diem(row["DIEMTP"]), diem(row["DIEMTK"]), danhgia(row["DANHGIA"]));
+                    MonHocs.Add(d);
+                }
             }
+            catch (Exception e) { Console.WriteLine(e.Message); }
+            
         }
 
-
+        //Hiển thị danh sách thông tin sinh viên
         public static void thongtinchitiet(int x, List<SinhVienDTO> SVs, List<Diem> Diems)
         {
-            SinhVienDTO result = (from sv in SVs where sv.MaSV == x select sv).FirstOrDefault();
-            if (result != null)
+            try
             {
-                Console.WriteLine(string.Format("|{0,-12}|{1,-18}|{2,-12}|{3,-18}|{4,-12}|{5,-12}|{6,-15}|", "Ma sinh vien", "Ten sinh vien", "Gioi tinh", "Ngay sinh", "Lop", "Khoa", "So mon dang ky"));
-                result.info();
-                List<MonHocDTO> monHocDTOs = new List<MonHocDTO>();
-                MonHocDTO_load(monHocDTOs, result.MaSV);
-
-                //List<Diem> diem = (from d in Diems where d.MaSV == x select d).ToList();
-                //List<MonHoc> monhoc = new List<MonHoc>();
-                if (monHocDTOs != null)
+                SinhVienDTO result = (from sv in SVs where sv.MaSV == x select sv).FirstOrDefault();
+                if (result != null)
                 {
-                    Console.WriteLine("\n");
+                    Console.WriteLine(string.Format("|{0,-12}|{1,-18}|{2,-12}|{3,-18}|{4,-12}|{5,-12}|{6,-15}|", "Ma sinh vien", "Ten sinh vien", "Gioi tinh", "Ngay sinh", "Lop", "Khoa", "So mon dang ky"));
+                    result.info();
+                    List<MonHocDTO> monHocDTOs = new List<MonHocDTO>();
+                    MonHocDTO_load(monHocDTOs, result.MaSV);
+
+                    //List<Diem> diem = (from d in Diems where d.MaSV == x select d).ToList();
+                    //List<MonHoc> monhoc = new List<MonHoc>();
+                    if (monHocDTOs != null)
+                    {
+                        Console.WriteLine("\n");
+                        Console.WriteLine(string.Format("|{0,-8}|{1,-30}|{2,-10}|{3,-10}|{4,-10}|{5,-10}|{6,-10}|", "Ma mon", "Ten mon hoc", "So Tiet", "Diem TP", "Diem QT", "Diem TK", "Danh gia"));
+                        foreach (MonHocDTO m in monHocDTOs)
+                        {
+                            m.info();
+                        }
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("404");
+                }
+            }
+            catch (Exception e) { Console.WriteLine(e.Message); }
+
+
+        }
+        //Nhập điểm cho sinh viên
+        public static Boolean nhapdiem(SinhVienDTO sv)
+        {
+            try
+            {
+            diem:
+                List<MonHocDTO> monHocDTOs = new List<MonHocDTO>();
+                List<MonHoc> MonHocs = new List<MonHoc>();
+                MonHocDTO_load(monHocDTOs, sv.MaSV);
+                if (monHocDTOs.Count() > 0)
+                {
                     Console.WriteLine(string.Format("|{0,-8}|{1,-30}|{2,-10}|{3,-10}|{4,-10}|{5,-10}|{6,-10}|", "Ma mon", "Ten mon hoc", "So Tiet", "Diem TP", "Diem QT", "Diem TK", "Danh gia"));
                     foreach (MonHocDTO m in monHocDTOs)
                     {
                         m.info();
                     }
+                    Console.WriteLine("Moi chon stt mon ban muon nhap diem");
+                    int choose = Int32.Parse(Console.ReadLine());
+
+                    if (monHocDTOs.Exists(x => x.MaMH == choose) != true)
+                        Console.WriteLine("Khong co mon nay moi nhap lai");
+                    else
+                    {
+                        //MonHocDTO result = monHocDTOs.Find(mh => mh.MaMH == choose);
+                        Console.WriteLine("Nhap diem thanh phan cua mon " + monHocDTOs.Find(mh => mh.MaMH == choose).TenMH);
+                        double DiemTP = double.Parse(Console.ReadLine());
+                        Console.WriteLine("Nhap diem qua trinh cua mon " + monHocDTOs.Find(mh => mh.MaMH == choose).TenMH);
+                        double DiemQT = double.Parse(Console.ReadLine());
+                        Diem diem = new Diem(sv.MaSV, choose, DiemTP, DiemQT);
+                        dbConnector connector = new dbConnector();
+                        connector.nhapdiem(diem);
+                        Console.WriteLine("Nhap diem thanh cong!");
+                        Console.WriteLine("Ban co muon tiep tuc? (y/n)");
+                        string key1 = Console.ReadLine();
+                        if (key1 == "y")
+                        {
+                            goto diem;
+                        }
+                        else return true;
+
+                    }
                 }
-
-            }
-            else
-            {
-                Console.WriteLine("404");
-            }
-
-        }
-        public static Boolean nhapdiem(SinhVienDTO sv)
-        {
-        diem:
-            List<MonHocDTO> monHocDTOs = new List<MonHocDTO>();
-            List<MonHoc> MonHocs = new List<MonHoc>();
-            MonHocDTO_load(monHocDTOs, sv.MaSV);
-            if (monHocDTOs.Count() > 0)
-            {
-                Console.WriteLine(string.Format("|{0,-8}|{1,-30}|{2,-10}|{3,-10}|{4,-10}|{5,-10}|{6,-10}|", "Ma mon", "Ten mon hoc", "So Tiet", "Diem TP", "Diem QT", "Diem TK", "Danh gia"));
-                foreach (MonHocDTO m in monHocDTOs)
-                {
-                    m.info();
-                }
-                Console.WriteLine("Moi chon stt mon ban muon nhap diem");
-                int choose = Int32.Parse(Console.ReadLine());
-
-                if (monHocDTOs.Exists(x => x.MaMH == choose) != true)
-                    Console.WriteLine("Khong co mon nay moi nhap lai");
                 else
                 {
-                    //MonHocDTO result = monHocDTOs.Find(mh => mh.MaMH == choose);
-                    Console.WriteLine("Nhap diem thanh phan cua mon " + monHocDTOs.Find(mh => mh.MaMH == choose).TenMH);
-                    double DiemTP = double.Parse(Console.ReadLine());
-                    Console.WriteLine("Nhap diem qua trinh cua mon " + monHocDTOs.Find(mh => mh.MaMH == choose).TenMH);
-                    double DiemQT = double.Parse(Console.ReadLine());
-                    Diem diem = new Diem(sv.MaSV, choose, DiemTP, DiemQT);
-                    dbConnector connector = new dbConnector();
-                    connector.nhapdiem(diem);
-                    Console.WriteLine("Nhap diem thanh cong!");
-                    Console.WriteLine("Ban co muon tiep tuc? (y/n)");
-                    string key1 = Console.ReadLine();
-                    if (key1 == "y")
-                    {
-                        goto diem;
-                    }
-                    else return true;
-
+                    Console.WriteLine("Sinh vien nay chua dang ky mon nao!");
                 }
-            }
-            else
-            {
-                Console.WriteLine("Sinh vien nay chua dang ky mon nao!");
-            }
 
+
+            }
+            catch (Exception e) { Console.WriteLine(e.Message); }
             return true;
         }
     }

@@ -8,6 +8,7 @@ namespace QLSV
 {
     public class SinhVien
     {
+        //Model Sinh viên
         public string Ten { get; set; }
         public int MaSV { get; set; }
         public string GioiTinh { get; set; }

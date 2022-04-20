@@ -10,6 +10,7 @@ namespace QLSV
 {
     public class dbConnector
     {
+        //Lớp dẫn xuất database
         string connector = @"Data Source=DESKTOP-ERKSGGI\SQLEXPRESS;Initial Catalog=QLSV;Integrated Security=True";
 
         public dbConnector() { }

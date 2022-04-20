@@ -8,6 +8,7 @@ namespace QLSV.DTO
 {
     public class MonHocDTO
     {
+        //ViewModel Môn học
         public int MaMH { get; set; }
         public string TenMH { get; set; }
         public int SoTiet { get; set; }
