@@ -34,7 +34,7 @@ namespace QLSV.DTO
         }
         public void Info()
         {
-            Console.WriteLine(string.Format(ConstParam.alignMH, MaMH, TenMH, SoTiet, DiemTP, DiemQT, DiemTK, DanhGia));
+            Console.WriteLine(string.Format(ConstParamemter.alignMH, MaMH, TenMH, SoTiet, DiemTP, DiemQT, DiemTK, DanhGia));
         }
         public void NhapDiem(double DiemTP, double DiemQT)
         {

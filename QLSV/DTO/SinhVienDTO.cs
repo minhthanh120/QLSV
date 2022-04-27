@@ -39,7 +39,7 @@ namespace QLSV.DTO
         public SinhVienDTO() { }
         public void Info()
         {
-            Console.WriteLine(string.Format(ConstParam.alignSV, MaSV, Ten, GioiTinh, DOB, Lop, Khoa, SoMon));
+            Console.WriteLine(string.Format(ConstParamemter.alignSV, MaSV, Ten, GioiTinh, DOB, Lop, Khoa, SoMon));
         }
     }
 }

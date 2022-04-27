@@ -16,7 +16,7 @@ namespace QLSV
         {
             //IDataLoader dataLoader= new DataLoader(new dbConnector());
             DataLoader dl = new DataLoader(new dbConnector());
-            ActionFunc action = new ActionFunc(dl);
+            ActionFunction action = new ActionFunction(dl);
         //IdbConnector connector;
         //action.SetConnector(new IDataLoader(new IdbConnector()));
         //Menu chương trình
@@ -44,14 +44,14 @@ namespace QLSV
                     break;
                 //Chức năng hiển thị chi tiết danh sách sinh viên
                 case 2:
-                case_2:
+                case2:
                     Console.Clear();
                     Console.WriteLine("Chi tiet thong tin sinh vien");
                     bool result2 = action.MenuChitietSinhVien();
                     if (result2 == true)
                     {
                         Console.Clear();
-                        goto case_2;
+                        goto case2;
                     }
 
                     else
@@ -61,14 +61,14 @@ namespace QLSV
                     }
                 //Nhập điểm
                 case 3:
-                case_3:
+                case3:
                     Console.Clear();
                     Console.WriteLine("Nhap diem sinh vien");
                     bool result3 = action.MenuNhapDiem();
                     if (result3 == true)
                     {
                         Console.Clear();
-                        goto case_3;
+                        goto case3;
                     }
 
                     else

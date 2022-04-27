@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConstParam.cs" />
+    <Compile Include="ConstParamemter.cs" />
     <Compile Include="Data\DataLoader.cs" />
     <Compile Include="Data\dbConnector.cs" />
     <Compile Include="Interface\IDataLoader.cs" />
@@ -62,7 +62,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Service\ActionFunc.cs" />
+    <Compile Include="Service\ActionFunction.cs" />
     <Compile Include="Models\SinhVien.cs" />
   </ItemGroup>
   <ItemGroup>

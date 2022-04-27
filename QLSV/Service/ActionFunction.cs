@@ -10,7 +10,7 @@ using QLSV.Models;
 
 namespace QLSV.Service
 {
-    internal class ActionFunc
+    internal class ActionFunction
     {
         public List<SinhVienDTO> _SVs = new List<SinhVienDTO>();
         List<MonHocDTO> _MHs = new List<MonHocDTO>();
@@ -18,8 +18,8 @@ namespace QLSV.Service
         MonHocDTO _mh = new MonHocDTO();
         public IDataLoader _dl;
 
-        public ActionFunc() { }
-        public ActionFunc(IDataLoader dl)=>this._dl = dl;// Setter injection
+        public ActionFunction() { }
+        public ActionFunction(IDataLoader dl)=>this._dl = dl;// Setter injection
 
         //Tìm sinh viên theo mã sinh viên
         SinhVienDTO TimkiemSV()
@@ -75,7 +75,7 @@ namespace QLSV.Service
                 }
                 else
                     Console.WriteLine("Chua khoi tao danh sach sinh vien");
-                return ConstParam.Continue();
+                return ConstParamemter.Continue();
 
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
@@ -121,7 +121,7 @@ namespace QLSV.Service
                                 mh.Info();
                             }
 
-                            if (ConstParam.Continue()==true)
+                            if (ConstParamemter.Continue()==true)
                             {
                                 Console.Clear();
                                 goto nhapdiem;
@@ -137,7 +137,7 @@ namespace QLSV.Service
                 }
                 else
                     Console.WriteLine("Chua khoi tao danh sach sinh vien");
-                return ConstParam.Continue();
+                return ConstParamemter.Continue();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
         }
@@ -175,19 +175,19 @@ namespace QLSV.Service
                 }
                 else
                 Console.WriteLine("Chua khoi tao danh sach sinh vien");
-                return ConstParam.Continue();
+                return ConstParamemter.Continue();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
         }
         void AlignmentSinhVien()
         {
             Console.WriteLine("Thong tin sinh vien");
-            Console.WriteLine(string.Format(ConstParam.alignSV, "Ma sinh vien", "Ten sinh vien", "Gioi tinh", "Ngay sinh", "Lop", "Khoa", "So mon dang ky"));
+            Console.WriteLine(string.Format(ConstParamemter.alignSV, "Ma sinh vien", "Ten sinh vien", "Gioi tinh", "Ngay sinh", "Lop", "Khoa", "So mon dang ky"));
         }
         void AlignmentMonHoc()
         {
             Console.WriteLine("\n");
-            Console.WriteLine(string.Format(ConstParam.alignMH, "Ma mon", "Ten mon hoc", "So Tiet", "Diem TP", "Diem QT", "Diem TK", "Danh gia"));
+            Console.WriteLine(string.Format(ConstParamemter.alignMH, "Ma mon", "Ten mon hoc", "So Tiet", "Diem TP", "Diem QT", "Diem TK", "Danh gia"));
         }
         //in ra màn hình và lấy thông tin nhập từ bàn phím
         string Input(string print = "Moi nhap ma mon hoc")

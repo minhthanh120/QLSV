@@ -20,7 +20,7 @@ namespace QLSV.Data
             DataTable table = new DataTable();
             try
             {
-                SqlConnection conn = new SqlConnection(ConstParam.connector);
+                SqlConnection conn = new SqlConnection(ConstParamemter.connector);
                 conn.Open();
                 SqlDataAdapter query = new SqlDataAdapter("EXECUTE DANHSACHSINHVIEN", conn);
                 query.Fill(table);
@@ -39,7 +39,7 @@ namespace QLSV.Data
             DataTable table = new DataTable();
             try
             {
-                SqlConnection conn = new SqlConnection(ConstParam.connector);
+                SqlConnection conn = new SqlConnection(ConstParamemter.connector);
                 conn.Open();
                 SqlDataAdapter query = new SqlDataAdapter("SELECT * FROM MONHOC WHERE MAMON =" + mamon + " AND MASV=" + masv, conn);
                 query.Fill(table);
@@ -57,7 +57,7 @@ namespace QLSV.Data
             DataTable table = new DataTable();
             try
             {
-                SqlConnection conn = new SqlConnection(ConstParam.connector);
+                SqlConnection conn = new SqlConnection(ConstParamemter.connector);
                 conn.Open();
                 SqlDataAdapter query = new SqlDataAdapter("EXECUTE DANHSACHDIEM " + masv, conn);
                 query.Fill(table);
@@ -76,7 +76,7 @@ namespace QLSV.Data
             DataTable table = new DataTable();
             try
             {
-                SqlConnection conn = new SqlConnection(ConstParam.connector);
+                SqlConnection conn = new SqlConnection(ConstParamemter.connector);
                 conn.Open();
                 SqlDataAdapter query = new SqlDataAdapter("SELECT * FROM SV_MH", conn);
                 query.Fill(table);
@@ -94,7 +94,7 @@ namespace QLSV.Data
             DataTable table = new DataTable();
             try
             {
-                SqlConnection conn = new SqlConnection(ConstParam.connector);
+                SqlConnection conn = new SqlConnection(ConstParamemter.connector);
                 conn.Open();
                 SqlCommand command = new SqlCommand("NHAPDIEM", conn);
                 command.CommandType = CommandType.StoredProcedure;
@@ -152,7 +152,7 @@ namespace QLSV.Data
         //    try
         //    {
         //        DataTable table = new DataTable();
-        //        SqlConnection conn = new SqlConnection(ConstParam.connector);
+        //        SqlConnection conn = new SqlConnection(ConstParamemter.connector);
         //        conn.Open();
         //        SqlDataAdapter query = new SqlDataAdapter("EXECUTE DANHSACHSINHVIEN", conn);
         //        query.Fill(table);
