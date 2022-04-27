@@ -6,6 +6,8 @@ using System.Linq;
 using QLSV.DTO;
 using QLSV.Service;
 using QLSV.Data;
+using Castle.Windsor;
+using Castle.Windsor.Installer;
 
 namespace QLSV
 {
@@ -15,10 +17,13 @@ namespace QLSV
         static void Main(string[] args)
         {
             //IDataLoader dataLoader= new DataLoader(new dbConnector());
-            DataLoader dl = new DataLoader(new dbConnector());
-            ActionFunction action = new ActionFunction(dl);
-        //IdbConnector connector;
-        //action.SetConnector(new IDataLoader(new IdbConnector()));
+            //DataLoader dl = new DataLoader(new dbConnector());
+            //ActionFunction action = new ActionFunction(dl);
+            var container = new WindsorContainer();
+            container.Install(FromAssembly.This());
+
+            var action = container.Resolve<ActionFunction>();
+
         //Menu chương trình
         menu:
             Console.WriteLine("___MENU___");
@@ -35,7 +40,11 @@ namespace QLSV
                     Console.WriteLine("Danh sach sinh vien");
                     bool result1 = action.MenuDanhsach();
                     if (result1 != true)
+                    {
+                        container.Dispose();
                         Environment.Exit(1);
+                    }    
+                        
                     else
                     {
                         Console.Clear();
