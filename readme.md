@@ -7,7 +7,7 @@
     </ul>
     <h1>Buổi 3: Dependency injection, service</h1>
     <img align="center" src="https://github.com/minhthanh120/QLSV/blob/master/DI service.png"/>
-    <img align="center" src="https://github.com/minhthanh120/QLSV/blob/master/diagram db.jpg"/>
+    <img align="center" src="https://github.com/minhthanh120/QLSV/blob/master/a62a6bd54d70832eda61.jpg"/>
     <p style ="text-align: left;">Module hóa menu chương trình thành cách action function trong lớp ActionFunc </p>
     <p style ="text-align: left;">Lưu các tham số không đổi trong ConstParam</p>
     <p style ="text-align: left;">Từ lớp ActionFunc ta tương tác với CSDL bằng cách sử dụng Setter injection/Constructor injection với interface của lớp DataLoader</p>
