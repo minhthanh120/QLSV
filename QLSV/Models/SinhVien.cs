@@ -30,7 +30,7 @@ namespace QLSV
             this.Khoa = Khoa;
         }
 
-        public void info()
+        public void Info()
         {
             Console.WriteLine(string.Format("|{0,-3}|{1,-18}|{2,-5}|{3,-18}|{4,-5}|{5,-5}|", MaSV, Ten, GioiTinh, DOB, Lop, Khoa));
         }

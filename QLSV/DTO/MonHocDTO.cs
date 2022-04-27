@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace QLSV.DTO
 {
     public class MonHocDTO
@@ -16,6 +15,7 @@ namespace QLSV.DTO
         public virtual double DiemQT { get; set; }
         public virtual double DiemTK { get; set; }
         public virtual string DanhGia { get; set; }
+        public MonHocDTO() { }
         public MonHocDTO(int MaMH, string TenMH, int SoTiet)
         {
             this.MaMH = MaMH;
@@ -32,9 +32,9 @@ namespace QLSV.DTO
             this.DiemTK = DiemTK;
             this.DanhGia = DanhGia;
         }
-        public void info()
+        public void Info()
         {
-            Console.WriteLine(string.Format("|{0,-8}|{1,-30}|{2,-10}|{3,-10}|{4,-10}|{5,-10}|{6,-10}|", MaMH, TenMH, SoTiet, DiemTP, DiemQT, DiemTK, DanhGia));
+            Console.WriteLine(string.Format(ConstParam.alignMH, MaMH, TenMH, SoTiet, DiemTP, DiemQT, DiemTK, DanhGia));
         }
         public void NhapDiem(double DiemTP, double DiemQT)
         {
