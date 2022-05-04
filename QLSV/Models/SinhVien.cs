@@ -4,17 +4,17 @@ using System.Linq;
 
 using System.Threading.Tasks;
 
-namespace QLSV
+namespace QLSV.Models
 {
     public class SinhVien
     {
         //Model Sinh viên
-        public string Ten { get; set; }
-        public int MaSV { get; set; }
-        public string GioiTinh { get; set; }
-        public string DOB { get; set; }
-        public string Lop { get; set; }
-        public string Khoa { get; set; }
+        public virtual string Ten { get; set; }
+        public virtual int MaSV { get; set; }
+        public virtual string GioiTinh { get; set; }
+        public virtual string DOB { get; set; }
+        public virtual string Lop { get; set; }
+        public virtual string Khoa { get; set; }
 
         public SinhVien()
         {
@@ -30,7 +30,7 @@ namespace QLSV
             this.Khoa = Khoa;
         }
 
-        public void Info()
+        public virtual void Info()
         {
             Console.WriteLine(string.Format("|{0,-3}|{1,-18}|{2,-5}|{3,-18}|{4,-5}|{5,-5}|", MaSV, Ten, GioiTinh, DOB, Lop, Khoa));
         }

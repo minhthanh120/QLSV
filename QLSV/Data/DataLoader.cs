@@ -13,7 +13,6 @@ namespace QLSV.Data
 {
     public class DataLoader: IDataLoader
     {
-
         IdbConnector _connector;
         public DataLoader() { }
         //Constructor injection
@@ -36,7 +35,6 @@ namespace QLSV.Data
                 }
             }
             catch (Exception e) { Console.WriteLine(e.Message); }
-
         }//Load danh sách sinh viên
         public void LoadSinhVienDTO( ref List<SinhVienDTO> SVs)
         {
@@ -53,7 +51,6 @@ namespace QLSV.Data
             }
             catch (Exception e) { Console.WriteLine(e.Message);}
         }
-        
         //Convert điểm trong datatable từ object sang double
         public double ConvertDiem(object row)
         {
@@ -91,7 +88,5 @@ namespace QLSV.Data
         {
             _connector.NhapDiem(diem);
         }
-        
-
     }
 }

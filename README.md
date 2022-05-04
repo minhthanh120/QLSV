@@ -4,6 +4,13 @@
       <li>Use programming language C#</li>
       <li>Author: Lê Minh Thành</li>
     </ul>
+    <h1>Buổi 5a: NHibernate</h1>
+    <img align="center" src="https://github.com/minhthanh120/QLSV/blob/master/NHibernate.png"/>
+    <p style ="text-align: left;">Cài đặt class NhibernateSession tạo các session</p>
+    <p style ="text-align: left;">Cài đặt file config chứa thông tin driver sql, sql connection string</p>
+    <p style ="text-align: left;">Mapping model với table, procedure trong MSSQL bằng file Model.hbn.xml, DTO.hbn.xml</p>
+    <p style ="text-align: left;">Cài đặt lớp hnbConnector và cho lớp kết thừa interface của lớp DataLoader, tạo các hàm chức năng giống của lớp DataLoader đã làm ở buổi trước</p>
+    <p style ="text-align: left;">Sử dụng Framework Castlewindsor để Dependency injection lớp hnbConnector</p>
     <h1>Buổi 4 Framework Castlewindsor</h1>
     <p style ="text-align: left;">Cài đặt installers trong class RepositoriesInstaller</p>
     <p style ="text-align: left;">Sử dụng installer này trong Program.Main() để đóng gói vào 1 container, và khi kết thúc chương trình ta Dispose container này</p>

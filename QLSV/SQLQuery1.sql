@@ -1,6 +1,10 @@
 CREATE DATABASE QLSV
 GO
+/*
+drop DATABASE QLSV
 
+use master
+*/
 USE QLSV
 GO
 
@@ -37,49 +41,6 @@ CREATE TABLE SV_MH
     CONSTRAINT kt_diemtp CHECK(DIEMTP<=10 AND DIEMTP>0),
     CONSTRAINT kt_diemqt CHECK(DIEMQT<=10 AND DIEMQT>0)
 )
-GO
-
--- Insert rows into table 'LOP'
-INSERT INTO LOP
-    ( -- columns to insert data into
-    [TENLOP]
-    )
-VALUES
-    ( -- first row: values for the columns in the list above
-        N'Công nghệ thông tin'
-),
-    ( -- second row: values for the columns in the list above
-        N'Tự động hóa'
-),
-    (
-        N'Cơ điện tử'
-),
-    (
-        N'Xây dựng'
-),
-    (
-        N'Khoa học máy tính'
-)
--- add more rows here
-GO
-
-select *
-FROM KHOA
-
--- Insert rows into table 'KHOA'
-INSERT INTO KHOA
-    ( -- columns to insert data into
-    [TENKHOA]
-    )
-VALUES
-    ( -- first row: values for the columns in the list above
-        N'1920'
-),
-    ( -- second row: values for the columns in the list above
-        N'2021'
-),
-    (N'2122')
--- add more rows here
 GO
 
 -- Insert rows into table 'MONHOC'
@@ -197,7 +158,7 @@ GO
 CREATE OR ALTER PROCEDURE DANHSACHSINHVIEN
 AS
 BEGIN
-    SELECT sv.MASV, sv.TENSV, sv.NGAYSINH, sv.GIOITINH, sv.LOP, sv.KHOA, COUNT(sm.MASV) as N'Số môn học'
+    SELECT sv.MASV as MaSV, sv.TENSV as TenSV, sv.NGAYSINH as DOB, sv.GIOITINH As GioiTinh, sv.LOP as Lop, sv.KHOA as Khoa, COUNT(sm.MASV) as N'SoMon'
     FROM SINHVIEN as sv FULL JOIN SV_MH as sm on sm.MASV=sv.MASV
     GROUP BY sv.TENSV,sv.MASV, sv.NGAYSINH, sv.GIOITINH, sv.LOP, sv.KHOA
 END
@@ -253,6 +214,9 @@ SELECT *
 FROM SINHVIEN
 
 execute NHAPDIEM 3,3,1,2
+execute NHAPDIEM 10,10,1,1
+
+EXECUTE NHAPDIEM @DIEMQT = diemqt, @DIEMTP = diemtp, @MAMON = mamon, @MASV = masv
 
 select *
 from SV_MH
@@ -260,4 +224,4 @@ from SV_MH
 -- drop DATABASE QLSV
 
 SELECT *
-FROM SV_MH
+FROM MONHOC

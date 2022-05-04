@@ -10,12 +10,12 @@ namespace QLSV.Models
     public class Diem
     {
         //Model Điểm
-        public int MaSV { get; set; }
-        public int MaMon { get; set; }
-        public double DiemQT { get; set; }
-        public double DiemTP { get; set; }
-        public double DiemTK { get; set; }
-        public string DanhGia { get; set; }
+        public virtual int MaSV { get; set; }
+        public virtual int MaMon { get; set; }
+        public virtual double DiemQT { get; set; }
+        public virtual double DiemTP { get; set; }
+        public virtual double DiemTK { get; set; }
+        public virtual string DanhGia { get; set; }
         public Diem() { }
         public Diem(int MaSV, int MaMon, double DiemQT, double DiemTP)
         {
@@ -40,9 +40,32 @@ namespace QLSV.Models
             this.DiemTK = DiemTK;
             this.DanhGia = DanhGia;
         }
-        public void Info()
+        public virtual void Info()
         {
             Console.WriteLine(string.Format("|{0,-3}|{1,-25}|{2,-3}|{3,-3}|{4,-3}|{5,-8}|", MaMon, MaSV, DiemQT, DiemTP, DiemTK, DanhGia));
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Diem diem &&
+                   MaSV == diem.MaSV &&
+                   MaMon == diem.MaMon &&
+                   DiemQT == diem.DiemQT &&
+                   DiemTP == diem.DiemTP &&
+                   DiemTK == diem.DiemTK &&
+                   DanhGia == diem.DanhGia;
+        }
+
+        public override int GetHashCode()
+        {
+            int hashCode = 636515174;
+            hashCode = hashCode * -1521134295 + MaSV.GetHashCode();
+            hashCode = hashCode * -1521134295 + MaMon.GetHashCode();
+            hashCode = hashCode * -1521134295 + DiemQT.GetHashCode();
+            hashCode = hashCode * -1521134295 + DiemTP.GetHashCode();
+            hashCode = hashCode * -1521134295 + DiemTK.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(DanhGia);
+            return hashCode;
         }
     }
 }

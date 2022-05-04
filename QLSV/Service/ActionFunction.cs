@@ -13,11 +13,12 @@ namespace QLSV.Service
     internal class ActionFunction
     {
         public List<SinhVienDTO> _SVs = new List<SinhVienDTO>();
+        public List<SinhVien> SVs= new List<SinhVien>();
         List<MonHocDTO> _MHs = new List<MonHocDTO>();
         SinhVienDTO _sv = new SinhVienDTO();
         MonHocDTO _mh = new MonHocDTO();
+        //public hbnConnector _dl;
         public IDataLoader _dl;
-
         public ActionFunction() { }
         public ActionFunction(IDataLoader dl)=>this._dl = dl;// Setter injection
 
@@ -59,8 +60,8 @@ namespace QLSV.Service
         //Chức năng hiển trị danh sách sinh viên
         public bool MenuDanhsach()
         {
-            try
-            {
+            //try
+            //{
                 //_dataLoader.LoadSinhVienDTO(ref _SVs);
                 _SVs.Clear();//clear dữ liệu cũ
                  _dl.LoadSinhVienDTO(ref _SVs);//load dữ liệu mới
@@ -71,14 +72,13 @@ namespace QLSV.Service
                     {
                         s.Info();
                     }
-
                 }
                 else
                     Console.WriteLine("Chua khoi tao danh sach sinh vien");
                 return ConstParamemter.Continue();
 
-            }
-            catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
+            //}
+            //catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
 
 
         }
@@ -179,6 +179,7 @@ namespace QLSV.Service
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
         }
+
         void AlignmentSinhVien()
         {
             Console.WriteLine("Thong tin sinh vien");

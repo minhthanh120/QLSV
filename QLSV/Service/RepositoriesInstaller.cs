@@ -15,8 +15,9 @@ namespace QLSV.Service
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(Component.For<ActionFunction>());
-            container.Register(Component.For<IdbConnector>().ImplementedBy<dbConnector>());
-            container.Register(Component.For<IDataLoader>().ImplementedBy<DataLoader>());
+            //container.Register(Component.For<IdbConnector>().ImplementedBy<dbConnector>());
+            container.Register(Component.For<IDataLoader>().ImplementedBy<hbnConnector>());
+            
         }
     }
 }

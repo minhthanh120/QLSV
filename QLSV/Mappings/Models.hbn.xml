@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="QLSV" namespace="QLSV.Models">
+	<class name="SinhVien" table="SINHVIEN" dynamic-update="true">
+		<cache usage="read-write"/>
+		<id name="MaSV" column="MASV">
+			<generator class="increment" />
+		</id>
+		<property name="Ten" column="TENSV"/>
+		<property name="DOB" column="NGAYSINH"/>
+		<property name = "GioiTinh" column="GIOITINH" />
+		<property name = "Lop" column="LOP"/>
+		<property name = "Khoa" column="KHOA"/>
+	</class>
+	<class name="MonHoc" table="MONHOC" dynamic-update="true">
+		<cache usage="read-write"/>
+		<id name="MaMon" column="MAMON" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="TenMH" column="TENMH" type="string"/>
+		<property name="SoTiet" column="SOTIET" type="int"/>
+	</class>
+	<class name="Diem" table="SV_MH" dynamic-update="true">
+		<cache usage="read-write"/>
+		<composite-id>
+			<key-property name="MaMon" column="MAMON" type="int"/>
+			<key-property name="MaSV" column="MASV" type="int"/>
+		</composite-id>
+		<property name="DiemTP" column="DIEMTP" type="double"/>
+		<property name="DiemQT" column="DIEMQT" type="double"/>
+		<property name="DiemTK" column="DIEMTK" type="double"/>
+		<property name="DanhGia" column="DANHGIA" type="string"/>
+	</class>
+</hibernate-mapping>

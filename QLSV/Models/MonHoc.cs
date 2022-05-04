@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QLSV
+namespace QLSV.Models
 {
     public class MonHoc
     {
         //Model Môn học
-        public int MaMon { get; set; }
-        public string TenMH { get; set; }
-        public int SoTiet { get; set; }
+        public virtual int MaMon { get; set; }
+        public virtual string TenMH { get; set; }
+        public virtual int SoTiet { get; set; }
         public MonHoc()
         {
         }
@@ -22,7 +22,7 @@ namespace QLSV
             this.SoTiet = SoTiet;
         }
 
-        public void info()
+        public virtual void Info()
         {
             Console.WriteLine(string.Format("|{0,-3}|{1,-25}|{2,-3}|", MaMon, TenMH, SoTiet));
         }

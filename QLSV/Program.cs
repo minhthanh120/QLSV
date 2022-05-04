@@ -16,9 +16,6 @@ namespace QLSV
 
         static void Main(string[] args)
         {
-            //IDataLoader dataLoader= new DataLoader(new dbConnector());
-            //DataLoader dl = new DataLoader(new dbConnector());
-            //ActionFunction action = new ActionFunction(dl);
             var container = new WindsorContainer();
             container.Install(FromAssembly.This());
 
@@ -30,10 +27,21 @@ namespace QLSV
             Console.WriteLine("1. Danh sach sinh vien");
             Console.WriteLine("2. Thong tin sinh vien");
             Console.WriteLine("3. Nhap điem");
+            Console.WriteLine("0. Thoat");
             int choose = Int32.Parse(Console.ReadLine());
             switch (choose)
 
             {
+                
+                case 0:
+                    if (ConstParamemter.Continue("Ban co muon thoat? (y/n)") == false)
+                        goto menu;
+                    else
+                    {
+                        container.Dispose();
+                        Environment.Exit(1);
+                    }
+                    break;
                 //Chức năng danh sách sinh viên
                 case 1:
                     Console.Clear();
@@ -43,8 +51,8 @@ namespace QLSV
                     {
                         container.Dispose();
                         Environment.Exit(1);
-                    }    
-                        
+                    }
+
                     else
                     {
                         Console.Clear();
@@ -85,16 +93,15 @@ namespace QLSV
                         Console.Clear();
                         goto menu;
                     }
+                    break;
                 default:
                     Console.WriteLine("Xin moi nhap lua chon tu 1 den 3!");
                     break;
+
             }
 
 
             Console.ReadKey();
         }
-
-
-
     }
 }

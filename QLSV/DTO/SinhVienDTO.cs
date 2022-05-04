@@ -9,14 +9,15 @@ namespace QLSV.DTO
     public class SinhVienDTO
     {
         //ViewModel Sinh viên
-        public string Ten { get; set; }
-        public int MaSV { get; set; }
-        public string GioiTinh { get; set; }
-        public string DOB { get; set; }
-        public string Lop { get; set; }
-        public string Khoa { get; set; }
+        public virtual string Ten { get; set; }
+        public virtual int MaSV { get; set; }
+        public virtual string GioiTinh { get; set; }
+        public virtual string DOB { get; set; }
+        public virtual string Lop { get; set; }
+        public virtual string Khoa { get; set; }
         public virtual int SoMon { get; set; }
         public virtual List<MonHocDTO> MonHocDTOs { get; set; }
+        public SinhVienDTO() { }
         public SinhVienDTO(string Ten, int MaSV, string GioiTinh, string DOB, string Lop, string Khoa)
         {
             this.Ten = Ten;
@@ -36,8 +37,7 @@ namespace QLSV.DTO
             this.Khoa = Khoa;
             this.SoMon = SoMon;
         }
-        public SinhVienDTO() { }
-        public void Info()
+        public virtual void Info()
         {
             Console.WriteLine(string.Format(ConstParamemter.alignSV, MaSV, Ten, GioiTinh, DOB, Lop, Khoa, SoMon));
         }
