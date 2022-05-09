@@ -1,11 +1,11 @@
-CREATE DATABASE QLSV
+CREATE DATABASE MVCQLSV
 GO
 /*
-drop DATABASE QLSV
+drop DATABASE MVCQLSV
 
 use master
 */
-USE QLSV
+USE MVCQLSV
 GO
 
 CREATE TABLE SINHVIEN
@@ -15,8 +15,7 @@ CREATE TABLE SINHVIEN
     LOP NVARCHAR(10),
     KHOA NVARCHAR(10),
     NGAYSINH DATE,
-    GIOITINH NVARCHAR(3),
-    CONSTRAINT kt_gioitinh CHECK(GIOITINH=N'Nam' OR GIOITINH=N'Nữ')
+    GIOITINH BIT,
 )
 GO
 
@@ -74,34 +73,34 @@ INSERT INTO SINHVIEN
     )
 VALUES
     ( -- first row: values for the columns in the list above
-        N'Nguyễn Văn A', N'Nam', '1999-01-01', N'K17', N'2021'
+        N'Nguyễn Văn A', 1, '1998-09-01', N'K17', N'2021'
 ),
     ( -- second row: values for the columns in the list above
-        N'Do Văn B', N'Nam', '1999-01-01', N'K17', N'2021'
+        N'Do Thị B', 0, '1999-08-02', N'K17', N'2021'
 ),
     ( -- second row: values for the columns in the list above
-        N'Ly Văn C', N'Nam', '1999-01-01', N'K17', N'2021'
+        N'Ly Văn C', 1, '2000-07-03', N'K17', N'2021'
 ),
     ( -- second row: values for the columns in the list above
-        N'Hà Thị D', N'Nữ', '1999-01-01', N'K17', N'2021'
+        N'Hà Thị D', 0, '2001-06-04', N'K17', N'2021'
 ),
     ( -- second row: values for the columns in the list above
-        N'Tăng Văn E', N'Nam', '1999-01-01', N'K17', N'2021'
+        N'Tăng Văn E', 1, '2000-05-05', N'K17', N'2021'
 ),
     ( -- second row: values for the columns in the list above
-        N'Nguyễn Văn F', N'Nam', '1999-01-01', N'K17', N'2021'
+        N'Nguyễn Thị F', 0, '1999-04-06', N'K17', N'2021'
 ),
     ( -- second row: values for the columns in the list above
-        N'Hồ Văn G', N'Nam', '1999-01-01', N'K17', N'2021'
+        N'Hồ Văn G', 1, '1998-03-07', N'K17', N'2021'
 ),
     ( -- second row: values for the columns in the list above
-        N'Nguyễn Văn H', N'Nam', '1999-01-01', N'K17', N'2021'
+        N'Nguyễn Thị H', 0, '1997-02-08', N'K17', N'2021'
 ),
     ( -- second row: values for the columns in the list above
-        N'Cao Văn I', N'Nam', '1999-01-01', N'K17', N'2021'
+        N'Cao Văn I', 1, '1996-01-09', N'K17', N'2021'
 ),
     ( -- second row: values for the columns in the list above
-        N'Lê Văn J', N'Nam', '1999-01-01', N'K17', N'2021'
+        N'Lê Thị J', 0, '1995-01-10', N'K17', N'2021'
 )
 -- add more rows here
 GO
@@ -143,7 +142,7 @@ CREATE OR ALTER PROCEDURE DANHSACHDIEM
 AS
 BEGIN
     -- body of the stored procedure
-    SELECT sm.MAMON, mh.TENMH, mh.SOTIET, sm.DIEMTK, sm.DIEMQT, sm.DIEMTP, sm.DANHGIA
+    SELECT sm.MAMON as MaMH, mh.TENMH as TenMH, mh.SOTIET as SoTiet, sm.DIEMTK as DiemTK, sm.DIEMQT as DiemQT, sm.DIEMTP as DiemTP, sm.DANHGIA as DanhGia
     FROM SV_MH as sm JOIN MONHOC as mh on sm.MAMON = mh.MAMON
     WHERE sm.MASV= @param1
 END
@@ -223,5 +222,4 @@ from SV_MH
 -- use master
 -- drop DATABASE QLSV
 
-SELECT *
-FROM MONHOC
+SELECT * FROM SINHVIEN WHERE TENSV = '' OR '1' = '1' and LOP = '' OR '1' = '1'

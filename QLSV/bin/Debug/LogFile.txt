@@ -1,0 +1,10 @@
+06/05/2022 2:48 CH: Start at 06/05/2022 2:48:38 CH
+06/05/2022 2:49 CH: Open List Student at 06/05/2022 2:49:21 CH
+06/05/2022 2:50 CH: Start at 06/05/2022 2:50:17 CH
+06/05/2022 2:50 CH: Open List Student at 06/05/2022 2:50:19 CH
+06/05/2022 2:50 CH: Start at 06/05/2022 2:50:27 CH
+06/05/2022 2:50 CH: Open details of student at 06/05/2022 2:50:28 CH
+06/05/2022 2:51 CH: Open input score of student at 06/05/2022 2:51:17 CH
+06/05/2022 2:51 CH: Open details of student at 06/05/2022 2:51:42 CH
+09/05/2022 8:03 SA: Start at 09/05/2022 8:03:49 SA
+09/05/2022 8:04 SA: Open List Student at 09/05/2022 8:04:30 SA

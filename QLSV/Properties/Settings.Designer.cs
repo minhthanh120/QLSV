@@ -26,8 +26,7 @@ namespace QLSV.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-ERKSGGI\\SQLEXPRESS;Initial Catalog=QLSV;Integrated Security=T" +
-            "rue")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLEXPRESS;Initial Catalog=QLSV;Integrated Security=True")]
         public string QLSVConnectionString {
             get {
                 return ((string)(this["QLSVConnectionString"]));

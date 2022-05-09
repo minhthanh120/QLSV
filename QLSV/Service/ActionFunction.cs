@@ -13,7 +13,6 @@ namespace QLSV.Service
     internal class ActionFunction
     {
         public List<SinhVienDTO> _SVs = new List<SinhVienDTO>();
-        public List<SinhVien> SVs= new List<SinhVien>();
         List<MonHocDTO> _MHs = new List<MonHocDTO>();
         SinhVienDTO _sv = new SinhVienDTO();
         MonHocDTO _mh = new MonHocDTO();
@@ -60,11 +59,10 @@ namespace QLSV.Service
         //Chức năng hiển trị danh sách sinh viên
         public bool MenuDanhsach()
         {
-            //try
-            //{
-                //_dataLoader.LoadSinhVienDTO(ref _SVs);
-                _SVs.Clear();//clear dữ liệu cũ
-                 _dl.LoadSinhVienDTO(ref _SVs);//load dữ liệu mới
+            try
+            {
+                _SVs.Clear(); //clear dữ liệu cũ
+                 _dl.LoadSinhVienDTO(ref _SVs); //load dữ liệu mới
                 if (_SVs.Count() > 0)
                 {
                     AlignmentSinhVien();
@@ -76,9 +74,8 @@ namespace QLSV.Service
                 else
                     Console.WriteLine("Chua khoi tao danh sach sinh vien");
                 return ConstParamemter.Continue();
-
-            //}
-            //catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
 
 
         }
@@ -131,16 +128,15 @@ namespace QLSV.Service
                             {
                                 return false;
                             }    
-                                
                         }
                     }
                 }
                 else
                     Console.WriteLine("Chua khoi tao danh sach sinh vien");
                 return ConstParamemter.Continue();
-            }
-            catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
         }
+            catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
+}
         //Chức năng hiển thị thông tin chi tiết sinh viên
         public bool MenuChitietSinhVien()
         {
@@ -168,9 +164,7 @@ namespace QLSV.Service
                             {
                                 mh.Info();
                             }
-                        }
-                            
-                        
+                        }   
                     }
                 }
                 else

@@ -16,6 +16,8 @@ namespace QLSV
 
         static void Main(string[] args)
         {
+            Console.InputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;
             var container = new WindsorContainer();
             container.Install(FromAssembly.This());
 
@@ -99,8 +101,6 @@ namespace QLSV
                     break;
 
             }
-
-
             Console.ReadKey();
         }
     }

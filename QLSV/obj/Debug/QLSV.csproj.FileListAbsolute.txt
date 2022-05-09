@@ -1,0 +1,91 @@
+C:\Users\MinhThanh\Source\Repos\QLSVnew\QLSV\bin\Debug\QLSV.exe.config
+C:\Users\MinhThanh\Source\Repos\QLSVnew\QLSV\bin\Debug\QLSV.exe
+C:\Users\MinhThanh\Source\Repos\QLSVnew\QLSV\bin\Debug\QLSV.pdb
+C:\Users\MinhThanh\Source\Repos\QLSVnew\QLSV\bin\Debug\Newtonsoft.Json.dll
+C:\Users\MinhThanh\Source\Repos\QLSVnew\QLSV\bin\Debug\Newtonsoft.Json.xml
+C:\Users\MinhThanh\Source\Repos\QLSVnew\QLSV\obj\Debug\QLSV.csproj.AssemblyReference.cache
+C:\Users\MinhThanh\Source\Repos\QLSVnew\QLSV\obj\Debug\QLSV.csproj.SuggestedBindingRedirects.cache
+C:\Users\MinhThanh\Source\Repos\QLSVnew\QLSV\obj\Debug\QLSV.csproj.CoreCompileInputs.cache
+C:\Users\MinhThanh\Source\Repos\QLSVnew\QLSV\obj\Debug\QLSV.csproj.CopyComplete
+C:\Users\MinhThanh\Source\Repos\QLSVnew\QLSV\obj\Debug\QLSV.exe
+C:\Users\MinhThanh\Source\Repos\QLSVnew\QLSV\obj\Debug\QLSV.pdb
+C:\Users\MinhThanh\source\repos\QLSVnew\QLSV\bin\Debug\Castle.Core.dll
+C:\Users\MinhThanh\source\repos\QLSVnew\QLSV\bin\Debug\Castle.Windsor.dll
+C:\Users\MinhThanh\source\repos\QLSVnew\QLSV\bin\Debug\Castle.Core.xml
+C:\Users\MinhThanh\source\repos\QLSVnew\QLSV\bin\Debug\Castle.Windsor.xml
+C:\Users\MinhThanh\source\repos\QLSVnew\QLSV\bin\Debug\Antlr3.Runtime.dll
+C:\Users\MinhThanh\source\repos\QLSVnew\QLSV\bin\Debug\Iesi.Collections.dll
+C:\Users\MinhThanh\source\repos\QLSVnew\QLSV\bin\Debug\NHibernate.dll
+C:\Users\MinhThanh\source\repos\QLSVnew\QLSV\bin\Debug\Remotion.Linq.dll
+C:\Users\MinhThanh\source\repos\QLSVnew\QLSV\bin\Debug\Remotion.Linq.EagerFetching.dll
+C:\Users\MinhThanh\source\repos\QLSVnew\QLSV\bin\Debug\Antlr3.Runtime.xml
+C:\Users\MinhThanh\source\repos\QLSVnew\QLSV\bin\Debug\Iesi.Collections.xml
+C:\Users\MinhThanh\source\repos\QLSVnew\QLSV\bin\Debug\NHibernate.xml
+C:\Users\MinhThanh\source\repos\QLSVnew\QLSV\bin\Debug\Remotion.Linq.xml
+C:\Users\MinhThanh\source\repos\QLSVnew\QLSV\bin\Debug\Remotion.Linq.EagerFetching.xml
+D:\QLSVnew\QLSV\obj\Debug\QLSV.csproj.AssemblyReference.cache
+D:\QLSVnew\QLSV\obj\Debug\QLSV.csproj.SuggestedBindingRedirects.cache
+D:\QLSVnew\QLSV\obj\Debug\QLSV.csproj.CoreCompileInputs.cache
+D:\QLSVnew\QLSV\obj\Debug\QLSV.exe
+D:\QLSVnew\QLSV\obj\Debug\QLSV.pdb
+D:\QLSVnew\QLSV\bin\Debug\QLSV.exe.config
+D:\QLSVnew\QLSV\bin\Debug\QLSV.exe
+D:\QLSVnew\QLSV\bin\Debug\QLSV.pdb
+D:\QLSVnew\QLSV\bin\Debug\Antlr3.Runtime.dll
+D:\QLSVnew\QLSV\bin\Debug\Castle.Core.dll
+D:\QLSVnew\QLSV\bin\Debug\Castle.Windsor.dll
+D:\QLSVnew\QLSV\bin\Debug\Iesi.Collections.dll
+D:\QLSVnew\QLSV\bin\Debug\Newtonsoft.Json.dll
+D:\QLSVnew\QLSV\bin\Debug\NHibernate.dll
+D:\QLSVnew\QLSV\bin\Debug\Remotion.Linq.dll
+D:\QLSVnew\QLSV\bin\Debug\Remotion.Linq.EagerFetching.dll
+D:\QLSVnew\QLSV\bin\Debug\Antlr3.Runtime.xml
+D:\QLSVnew\QLSV\bin\Debug\Castle.Core.xml
+D:\QLSVnew\QLSV\bin\Debug\Castle.Windsor.xml
+D:\QLSVnew\QLSV\bin\Debug\Iesi.Collections.xml
+D:\QLSVnew\QLSV\bin\Debug\Newtonsoft.Json.xml
+D:\QLSVnew\QLSV\bin\Debug\NHibernate.xml
+D:\QLSVnew\QLSV\bin\Debug\Remotion.Linq.xml
+D:\QLSVnew\QLSV\bin\Debug\Remotion.Linq.EagerFetching.xml
+D:\QLSVnew\QLSV\obj\Debug\QLSV.csproj.CopyComplete
+D:\QLSVnew - Copy\QLSV\bin\Debug\QLSV.exe.config
+D:\QLSVnew - Copy\QLSV\bin\Debug\QLSV.exe
+D:\QLSVnew - Copy\QLSV\bin\Debug\QLSV.pdb
+D:\QLSVnew - Copy\QLSV\bin\Debug\Antlr3.Runtime.dll
+D:\QLSVnew - Copy\QLSV\bin\Debug\Castle.Core.dll
+D:\QLSVnew - Copy\QLSV\bin\Debug\Castle.Windsor.dll
+D:\QLSVnew - Copy\QLSV\bin\Debug\Dapper.dll
+D:\QLSVnew - Copy\QLSV\bin\Debug\Iesi.Collections.dll
+D:\QLSVnew - Copy\QLSV\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\QLSVnew - Copy\QLSV\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\QLSVnew - Copy\QLSV\bin\Debug\Newtonsoft.Json.dll
+D:\QLSVnew - Copy\QLSV\bin\Debug\NHibernate.dll
+D:\QLSVnew - Copy\QLSV\bin\Debug\Remotion.Linq.dll
+D:\QLSVnew - Copy\QLSV\bin\Debug\Remotion.Linq.EagerFetching.dll
+D:\QLSVnew - Copy\QLSV\bin\Debug\System.Buffers.dll
+D:\QLSVnew - Copy\QLSV\bin\Debug\System.Memory.dll
+D:\QLSVnew - Copy\QLSV\bin\Debug\System.Numerics.Vectors.dll
+D:\QLSVnew - Copy\QLSV\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\QLSVnew - Copy\QLSV\bin\Debug\System.ValueTuple.dll
+D:\QLSVnew - Copy\QLSV\bin\Debug\Antlr3.Runtime.xml
+D:\QLSVnew - Copy\QLSV\bin\Debug\Castle.Core.xml
+D:\QLSVnew - Copy\QLSV\bin\Debug\Castle.Windsor.xml
+D:\QLSVnew - Copy\QLSV\bin\Debug\Dapper.xml
+D:\QLSVnew - Copy\QLSV\bin\Debug\Iesi.Collections.xml
+D:\QLSVnew - Copy\QLSV\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\QLSVnew - Copy\QLSV\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\QLSVnew - Copy\QLSV\bin\Debug\Newtonsoft.Json.xml
+D:\QLSVnew - Copy\QLSV\bin\Debug\NHibernate.xml
+D:\QLSVnew - Copy\QLSV\bin\Debug\Remotion.Linq.xml
+D:\QLSVnew - Copy\QLSV\bin\Debug\Remotion.Linq.EagerFetching.xml
+D:\QLSVnew - Copy\QLSV\bin\Debug\System.Buffers.xml
+D:\QLSVnew - Copy\QLSV\bin\Debug\System.Memory.xml
+D:\QLSVnew - Copy\QLSV\bin\Debug\System.Numerics.Vectors.xml
+D:\QLSVnew - Copy\QLSV\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\QLSVnew - Copy\QLSV\bin\Debug\System.ValueTuple.xml
+D:\QLSVnew - Copy\QLSV\obj\Debug\QLSV.csproj.AssemblyReference.cache
+D:\QLSVnew - Copy\QLSV\obj\Debug\QLSV.csproj.SuggestedBindingRedirects.cache
+D:\QLSVnew - Copy\QLSV\obj\Debug\QLSV.csproj.CoreCompileInputs.cache
+D:\QLSVnew - Copy\QLSV\obj\Debug\QLSV.csproj.CopyComplete
+D:\QLSVnew - Copy\QLSV\obj\Debug\QLSV.exe
+D:\QLSVnew - Copy\QLSV\obj\Debug\QLSV.pdb

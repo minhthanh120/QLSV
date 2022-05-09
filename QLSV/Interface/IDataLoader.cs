@@ -13,6 +13,5 @@ namespace QLSV.Interface
         void LoadMonHocDTO(ref List<MonHocDTO> MonHocs, int masv);
         void LoadSinhVienDTO(ref List<SinhVienDTO> SVs);
         void NhapDiem(Diem diem);
-        //void LoadSinhVien(ref List<SinhVien> SVs);
     }
 }

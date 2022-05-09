@@ -9,7 +9,7 @@ namespace QLSV.Models
     public class SinhVien
     {
         //Model Sinh viên
-        public virtual string Ten { get; set; }
+        public virtual string TenSV { get; set; }
         public virtual int MaSV { get; set; }
         public virtual string GioiTinh { get; set; }
         public virtual string DOB { get; set; }
@@ -22,7 +22,7 @@ namespace QLSV.Models
         }
         public SinhVien(string Ten, int MaSV, string GioiTinh, string DOB, string Lop, string Khoa)
         {
-            this.Ten = Ten;
+            this.TenSV = Ten;
             this.MaSV = MaSV;
             this.GioiTinh = GioiTinh;
             this.DOB = DOB;
@@ -32,7 +32,7 @@ namespace QLSV.Models
 
         public virtual void Info()
         {
-            Console.WriteLine(string.Format("|{0,-3}|{1,-18}|{2,-5}|{3,-18}|{4,-5}|{5,-5}|", MaSV, Ten, GioiTinh, DOB, Lop, Khoa));
+            Console.WriteLine(string.Format("|{0,-3}|{1,-18}|{2,-5}|{3,-18}|{4,-5}|{5,-5}|", MaSV, TenSV, GioiTinh, DOB, Lop, Khoa));
         }
     }
 }
