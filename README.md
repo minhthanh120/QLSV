@@ -5,7 +5,7 @@
       <li>Author: Lê Minh Thành</li>
     </ul>
     <h1>Buổi 5b: Dapper</h1>
-    <img align="center" src="https://github.com/minhthanh120/QLSV/blob/master/Dapper.png"/>
+    <img align="center" src="https://github.com/minhthanh120/QLSV/blob/Dapper/Dapper.png"/>
     <p style ="text-align: left;">Implement lớp dpConnector sử dụng Dapper để truy vấn dữ liệu và mapping với model</p>
     <p style ="text-align: left;">Tại đây có các hàm chức năng giống với hnbConnector sử dụng NHibernate như Load danh sách sinh viên, Chi tiết thông tin sinh viên, nhập điểm do cùng kế thừa interface IDataloader với hnbConnector</p>
     <p style ="text-align: left;">Sử dụng Framework Castlewindsor để Dependency injection lớp dpConnector</p>
